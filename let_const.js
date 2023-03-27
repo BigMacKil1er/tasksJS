@@ -30,3 +30,9 @@ obj.name = 'Vladlen'
 obj.age = 32
 
 console.log(obj)
+
+function myFunc() {
+    console.log(this)
+}
+
+myFunc()
