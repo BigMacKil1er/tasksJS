@@ -78,4 +78,10 @@
 // console.log(nums(4, 2))
 // console.log(nums(1, 2))
 
-[1, 2, 3, 4].reduce((x, y) => console.log(x, y));
+// [1, 2, 3, 4].reduce((x, y) => console.log(x, y));
+
+let num = 255
+
+console.log(num.toString(36))
+
+console.log(123..toString(2))
