@@ -80,8 +80,47 @@
 
 // [1, 2, 3, 4].reduce((x, y) => console.log(x, y));
 
-let num = 255
+// let num = 255
+//
+// console.log(num.toString(36))
+//
+// console.log(123..toString(2))
+const obj = {
+    name: 'Jesus',
+    'I know': 'It\'s easy',
+    age: 2040,
+    showWhat: function () {
+        console.log(this)
+    },
+}
 
-console.log(num.toString(36))
+obj.showWhat()
+console.log('==================')
+console.log(obj['I know'])
 
-console.log(123..toString(2))
+let whichCar = 'bmw'
+console.log('==================')
+const car = {
+    [whichCar]: 'much power',
+    have: 'nope',
+    chowCar: function () {
+        console.log(this)
+    }
+}
+
+car.chowCar()
+console.log('==================')
+
+const obj2 = {}
+obj2.name = 'Some name'
+obj2.__proto__ = 'String'
+
+console.log(obj2.name ,obj2.__proto__)
+
+console.log('==================')
+
+console.log('I show you something', 'Do you know what?', 'does have a Variable name?', 'name' in obj2, 'does have Variable dick?', 'dick' in obj2,)
+
+let mass = ['a', 'b', 'c']
+let str = 'abcdf'
+console.log('b' in mass)
