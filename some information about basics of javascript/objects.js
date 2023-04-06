@@ -163,6 +163,40 @@
 // console.log(acb.value())
 
 
-let user = {}
+// let user = {}
+//
+// console.log(user.adress?.street)
 
-console.log(user.adress?.street)
+// ========================преобразование обьектов==========================
+
+// ----------------используя--------------- Symbol.toPrimitive
+
+let obj1 = {
+    name: 'Ted',
+    weight: 1000,
+    [Symbol.toPrimitive](hint) {
+        return hint == 'string' ? this.name : this.weight
+    }
+}
+
+let obj2 = {
+    name: 'Nick',
+    weight: 400,
+    [Symbol.toPrimitive](hint) {
+        return hint == 'string' ? this.name : this.weight
+    }
+}
+
+console.log(obj2 + obj1)
+
+let num = +obj1
+
+console.log(String(obj2))
+
+let obj3 = {
+    toString(){
+        return '2'
+    }
+}
+
+console.log(obj3 * 3)
