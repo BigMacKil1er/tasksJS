@@ -81,3 +81,41 @@ b.forEach((item, index, array) => { // Перебор фор ичем со ст�
     console.log(`Получается у ${array} имеется индекс ${index} и значение ${item}`)
 })
 b.forEach(console.log) // выводит все сразу в консоль
+
+let inxOf = b.indexOf('plum', 0) // 1 первый индекс
+let inclds = b.includes('plum', 0) // true
+let lstindxof = b.lastIndexOf('plum', -1) // 4 певрое вхождение с конца
+console.log(lstindxof)
+
+let fruit = b.findIndex(item => {
+    if (item === 'plum'){
+        return true
+    }
+})
+console.log('plum', fruit)
+
+
+let arrayObject = [
+    {
+        name: 'art',
+        age: 27,
+    },
+    {
+        name: 'ars',
+        age: 28,
+    },
+    {
+        name: 'ser',
+        age: 26,
+    },
+    {
+        name: 'rob',
+        age: 24,
+    },
+]
+let respObj = arrayObject.find(item => item.age <= 26)          // возвращает сам элемент если находит или undefined
+console.log(respObj)
+let respObj2 = arrayObject.findIndex(item => item.age < 27)    // возвращает индекс или -1
+console.log(respObj2)
+let respObj3 = arrayObject.findLastIndex(item => item.age < 27)    // возвращает индекс или -1 но с конца
+console.log(respObj3)
