@@ -237,4 +237,30 @@
 // console.log(copySorted(arr))
 // console.log(arr)
 
+// ==================какой то не большой калькулятор
 
+function Calculator() {
+    this.methods = {
+        "-": (a, b) => a - b,
+        "+": (a, b) => a + b
+    }
+    this.calculate = function (str) {
+        let arr = str.split(' '),
+            a = +arr[0],
+            op = arr[1],
+            b = +arr[2]
+        if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+            return NaN;
+        }
+        return this.methods[op](a, b)
+    }
+    this.addMethod = function (name, func) {
+        this.methods[name] = func
+    }
+}
+
+let calc = new Calculator()
+calc.addMethod("*", (a, b) => a * b)
+calc.addMethod("/", (a, b) => a / b)
+calc.addMethod("**", (a, b) => a ** b)
+console.log(calc.calculate('2 ** 3'))
