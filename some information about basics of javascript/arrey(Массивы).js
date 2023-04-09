@@ -205,16 +205,24 @@
 //     Функция должна возвращать новый массив и не изменять исходный.
 
 //-----solution-------
-function filterRange(arr, a, b) {
-    let arrFilter = arr.filter(item => {
-        if (item >= a && item <= b) {
-            return item
-        }
-    })
-    return arrFilter
-}
+// function filterRange(arr, a, b) {
+//     let arrFilter = arr.filter(item => {
+//         if (item >= a && item <= b) {
+//             return item
+//         }
+//     })
+//     return arrFilter
+// }
+//
+// let arr = [5, 3, 8, 1];
+//
+// console.log(filterRange(arr, 1, 4))
 
-let arr = [5, 3, 8, 1];
 
-console.log(filterRange(arr, 1, 4))
+// Сортировать в порядке по убыванию
+// важность: 4
+//========solution===========================
 
+let arr = [5, 2, 1, -10, 8];
+arr.sort((a, b) => b-a)
+console.log( arr ); // 8, 5, 2, 1, -10
