@@ -138,5 +138,22 @@ let randomArr = [43, 20, 35, 10, 9, 11, 7, 8, 9, 2]
 randomArr.sort((a, b) => a - b)
 console.log(randomArr)
 
+
 let resul = randomArr.reduce((sum, currentValue) => sum + currentValue)
 console.log(resul)
+
+let alpha = ["alphabet", "alphabetic", "alpha", "alpgorithms"]
+
+let result = alpha.reduce((common, strin) => {
+    for (let i = common.length; i >= 0; i--) {
+        let substr = common.slice(0, i)
+        if (strin.indexOf(substr) === 0){
+            return substr
+        }
+    }
+    return ''
+})
+
+console.log(result)
+
+
