@@ -119,3 +119,24 @@ let respObj2 = arrayObject.findIndex(item => item.age < 27)    // возвращ
 console.log(respObj2)
 let respObj3 = arrayObject.findLastIndex(item => item.age < 27)    // возвращает индекс или -1 но с конца
 console.log(respObj3)
+
+let arreyFilter = arrayObject.filter(item => item.age < 27)
+console.log(arreyFilter)
+
+let arrMap = arrayObject.map(function (item) {
+    item.age += 1
+    return item
+})
+console.log(arrMap)
+let arrNum = [1, 2, 3, 4, 5, 6,].map(function (item) {
+    return item * 2
+})
+console.log(arrNum)
+
+let randomArr = [43, 20, 35, 10, 9, 11, 7, 8, 9, 2]
+
+randomArr.sort((a, b) => a - b)
+console.log(randomArr)
+
+let resul = randomArr.reduce((sum, currentValue) => sum + currentValue)
+console.log(resul)
