@@ -178,22 +178,43 @@
 // }
 
 //-----------------second solution-------------------
+//
+// function camelize(str) {
+//     let arr = str.split('')
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === '-') {
+//             arr.splice(i, 1)
+//             arr[i] = arr[i].toUpperCase()
+//         }
+//     }
+//     return arr.join('')
+// }
+// console.log(camelize('-webkit-transition'))
+//
+// let arrr = [
+//     'w', 'e', 'b', 'k',
+//     'i', 't', 't', 'r',
+//     'a', 'n', 's', 'i',
+//     't', 'i', 'o', 'n'
+// ]
 
-function camelize(str) {
-    let arr = str.split('')
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === '-') {
-            arr.splice(i, 1)
-            arr[i] = arr[i].toUpperCase()
+
+//
+// Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями больше или равными a и меньше или равными b и возвращает результат в виде массива.
+//
+//     Функция должна возвращать новый массив и не изменять исходный.
+
+//-----solution-------
+function filterRange(arr, a, b) {
+    let arrFilter = arr.filter(item => {
+        if (item >= a && item <= b) {
+            return item
         }
-    }
-    return arr.join('')
+    })
+    return arrFilter
 }
-console.log(camelize('-webkit-transition'))
 
-let arrr = [
-    'w', 'e', 'b', 'k',
-    'i', 't', 't', 'r',
-    'a', 'n', 's', 'i',
-    't', 'i', 'o', 'n'
-]
+let arr = [5, 3, 8, 1];
+
+console.log(filterRange(arr, 1, 4))
+
