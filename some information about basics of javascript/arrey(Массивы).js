@@ -222,7 +222,17 @@
 // Сортировать в порядке по убыванию
 // важность: 4
 //========solution===========================
+//
+// let arr = [5, 2, 1, -10, 8];
+// arr.sort((a, b) => b-a)
+// console.log( arr ); // 8, 5, 2, 1, -10
 
-let arr = [5, 2, 1, -10, 8];
-arr.sort((a, b) => b-a)
-console.log( arr ); // 8, 5, 2, 1, -10
+//У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+//===================solution=============
+function copySorted(arr) {
+    let arr2 = []
+    return arr2.concat(arr).sort((a, b) => a.localeCompare(b))
+}
+let arr = ["HTML", "JavaScript", "CSS"];
+console.log(copySorted(arr))
+console.log(arr)
