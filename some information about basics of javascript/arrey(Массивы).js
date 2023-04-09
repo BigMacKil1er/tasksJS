@@ -229,10 +229,12 @@
 
 //У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
 //===================solution=============
-function copySorted(arr) {
-    let arr2 = []
-    return arr2.concat(arr).sort((a, b) => a.localeCompare(b))
-}
-let arr = ["HTML", "JavaScript", "CSS"];
-console.log(copySorted(arr))
-console.log(arr)
+// function copySorted(arr) {
+//     let arr2 = []
+//     return arr2.concat(arr).sort((a, b) => a.localeCompare(b))
+// }
+// let arr = ["HTML", "JavaScript", "CSS"];
+// console.log(copySorted(arr))
+// console.log(arr)
+
+
