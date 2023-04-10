@@ -200,3 +200,28 @@ let obj3 = {
 }
 
 console.log(obj3 * 3)
+
+
+
+// ===================for of===========для obj=========
+let objof = {
+    from: 1,
+    to: 5,
+    [Symbol.iterator]() {
+        this.current = this.from;
+        return this;
+    },
+
+    next() {
+        if (this.current <= this.to) {
+            return { done: false, value: this.current++ };
+        } else {
+            return { done: true };
+        }
+    }
+}
+
+for (const objofElement of objof) {
+    console.log(objofElement)
+
+}
