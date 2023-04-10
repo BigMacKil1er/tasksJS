@@ -32,4 +32,8 @@ let obj = {
     naira: 40
 }
 let mapFromObj = new Map(Object.entries(obj)) // Object.entries(obj) = преобразует обьект в масив, затем масив передаем в мап
-console.log(mapFromObj)
+console.log('Из объекта получили -', mapFromObj)
+
+
+let objFromMap = Object.fromEntries(mapFromObj) // Object.fromEntries(map)  = преобразует мап в объект
+console.log("Из мап получили объект -", objFromMap)
