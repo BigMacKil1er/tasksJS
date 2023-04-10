@@ -50,3 +50,12 @@ function aclear(arr) {
 
 let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 console.log(aclear(arr))
+
+// задача про массив в который мона будет пушить
+let map2 = new Map();
+
+map2.set("name", "John");
+
+let keys = Array.from(map2.keys())  // Arrey.from(map) преобразует мап в массив
+keys.push('Igor')
+console.log(keys)
