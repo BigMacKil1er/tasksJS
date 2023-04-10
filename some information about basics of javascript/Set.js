@@ -25,3 +25,15 @@ for (let number of set.entries()) {
 
 //Работает так потому что работает так же как мап и могут быть взаимо заменены
 set.clear()
+
+
+// задачка про сет
+
+function unique(arr) {
+    let set = new Set(arr)
+    return Array.from(set) // переводим сет в массив
+}
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+console.log(unique(values))
