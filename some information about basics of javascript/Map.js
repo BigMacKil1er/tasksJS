@@ -37,3 +37,16 @@ console.log('Из объекта получили -', mapFromObj)
 
 let objFromMap = Object.fromEntries(mapFromObj) // Object.fromEntries(map)  = преобразует мап в объект
 console.log("Из мап получили объект -", objFromMap)
+
+/// Задачка про анограмы
+
+function aclear(arr) {
+    let map = new Map()
+    for (let arrElement of arr) {
+        map.set(arrElement.toLowerCase().split('').sort().join(''), arrElement)
+    }
+    return Array.from(map.values())
+}
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+console.log(aclear(arr))
