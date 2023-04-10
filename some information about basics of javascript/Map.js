@@ -23,4 +23,13 @@ for (let mapElement of map.values()) {
 for (let mapElement of map.entries()) {
     console.log(mapElement)
 }
+map.clear() // Очистили
+// получаем коллекция мап из обекта
 
+let obj = {
+    arsen: 28,
+    artem: 27,
+    naira: 40
+}
+let mapFromObj = new Map(Object.entries(obj)) // Object.entries(obj) = преобразует обьект в масив, затем масив передаем в мап
+console.log(mapFromObj)
