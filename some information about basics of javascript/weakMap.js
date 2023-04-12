@@ -42,3 +42,23 @@ messages.push({text: 'What\'s up?', from: 'Kent'})
 checkMessage(messages)
 
 console.log(newWeakSet.has(messages[3]))
+
+// теперь задачка такая же только а weakMap и использование date
+
+let newWeakMap = new WeakMap()
+
+function recMap(obj) {
+    let time = new Date()
+    newWeakMap.set(obj, time.getTime())
+}
+
+function checkMessageMap(arr) {
+    for (let arrElement of arr) {
+        recMap(arrElement)
+    }
+}
+checkMessageMap(messages)
+console.log(newWeakMap.get(messages[0]))
+console.log(newWeakMap.get(messages[1]))
+console.log(newWeakMap.get(messages[2]))
+console.log(newWeakMap.get(messages[3]))
