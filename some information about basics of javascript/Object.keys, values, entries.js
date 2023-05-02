@@ -8,9 +8,11 @@
 //     Если объект salaries пуст, то результат должен быть 0.
 
 let salaries = {
-    "John": 100,
-    "Pete": 300,
-    "Mary": 250
+    "JOHN": 100,
+    "JTTN": 100,
+    "JOGN": 100,
+    "PETE": 300,
+    "MARY": 250
 };
 
 // for (let salary of Object.entries(salaries)) {
@@ -25,7 +27,17 @@ function sumSalaries(obj) {
     return sum
 }
 
-
+let t = 'Jt'
+function sumSa(obj) {
+    let sum = []
+    let fil = Object.keys(obj).filter(item => item.indexOf(t.toUpperCase()) !== -1)
+    // for (let value of Object.keys(obj)) {
+    //     sum.push(value)+
+    // }
+    // return sum
+    return fil
+}
+console.log(sumSa(salaries))
 console.log(sumSalaries(salaries))
 
 // Напишите функцию count(obj), которая возвращает количество свойств объекта:
@@ -41,3 +53,5 @@ let user = {
 };
 
 console.log(count(user))
+
+console.log('string'.toUpperCase())
