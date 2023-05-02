@@ -58,4 +58,6 @@ map2.set("name", "John");
 
 let keys = Array.from(map2.keys())  // Arrey.from(map) преобразует мап в массив
 keys.push('Igor')
+const h = map2.get('name')
+console.log(h.forEach())
 console.log(keys)
