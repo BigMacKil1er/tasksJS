@@ -25,7 +25,13 @@ function square(num) {
 
 
 // expression можно вызывать только после обьявления
-console.log(square2(2))
+// console.log(square2(2))
 const square2 = function (num) {
     return num ** 2
 }
+console.log(as)
+
+as = 10
+
+console.log(as)
+var as
