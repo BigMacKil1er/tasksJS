@@ -12,7 +12,7 @@ function cacheDecorator(func) {
         if (cache.has(x)){
             return cache.get(x)
         }
-        let result = func(x)
+        let result = func.call(this, x)
 
         cache.set(x, result)
         return result
@@ -23,3 +23,17 @@ slow = cacheDecorator(slow)
 
 console.log(slow(5))
 console.log(slow(5))
+
+// По сути call явно устанавливает контекст this если мы вызываем функцию внутри объекта и еоторая ссылается на элемент ынутри объекта
+const obj = {
+    someMethod(){
+        return 1
+    },
+    someFunction(x){
+        console.log('Called with call ' + x)
+        return x * this.someMethod()
+    }
+}
+obj.someFunction = cacheDecorator(obj.someFunction)
+console.log(obj.someFunction(5))
+console.log(obj.someFunction(5))
