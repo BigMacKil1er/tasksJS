@@ -39,7 +39,7 @@ console.log(obj.someFunction(5))
 console.log(obj.someFunction(5))
 
 // obout apply
-
+// делает тоже самое что и call но может обработать сразу много аргументов
 
 
 
@@ -85,3 +85,22 @@ let f1500 = delay(f, 1500);
 
 f1000("test"); // показывает "test" после 1000 мс
 f1500("test"); // показывает "test" после 1500 м
+
+// next problem
+function debounce(f, ms){
+    let time = false
+    return function () {
+        if (time) return
+        f.apply(this, arguments)
+        time = true
+        setTimeout(()=> time = false, ms)
+    }
+}
+let fu = debounce(console.log, 1000);
+
+fu(1); // выполняется немедленно
+fu(2); // проигнорирован
+
+setTimeout( () => fu(3), 100); // проигнорирован (прошло только 100 мс)
+setTimeout( () => fu(4), 1100); // выполняется
+setTimeout( () => fu(5), 1500); // проигнорирован (прошло только 400 мс от последнего вызова)
