@@ -68,3 +68,20 @@ work(5, 6);// 11
 for (let args of work.calls) {
     console.log( 'call: ' + args.join() ); // "call:1,2", "call:4,5"
 }
+
+// next problem
+function delay(func, delay) {
+    return function (){
+        setTimeout(()=> func.apply(this, arguments), delay)
+    }
+}
+function f(x) {
+    console.log(x);
+}
+
+// создаём обёртки
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
+
+f1000("test"); // показывает "test" после 1000 мс
+f1500("test"); // показывает "test" после 1500 м
