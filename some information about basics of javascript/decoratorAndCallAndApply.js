@@ -1,28 +1,31 @@
 // decorator
 // декоратор это функция принимающая другую функцию и изменяет ее поведение
-function slow(x) {
-    console.log(`Called with ${x}`)
-    return x
+function slow(x,y) {
+    console.log(`Called with ${x} and ${y}`)
+    return x + y
 }
 
 function cacheDecorator(func) {
     let cache = new Map()
-
-    return function (x){
-        if (cache.has(x)){
-            return cache.get(x)
+    let key = hash(arguments)
+    return function (key){
+        if (cache.has(key)){
+            return cache.get(key)
         }
-        let result = func.call(this, x)
+        let result = func.call(this, ...arguments)
 
-        cache.set(x, result)
+        cache.set(key, result)
         return result
     }
+}
+function hash() {
+    return [].join.call(arguments)
 }
 
 slow = cacheDecorator(slow)
 
-console.log(slow(5))
-console.log(slow(5))
+console.log(slow(5, 5))
+console.log(slow(5, 2))
 
 // По сути call явно устанавливает контекст this если мы вызываем функцию внутри объекта и еоторая ссылается на элемент ынутри объекта
 const obj = {
@@ -41,8 +44,27 @@ console.log(obj.someFunction(5))
 // obout apply
 // делает тоже самое что и call но может обработать сразу много аргументов
 
+function copyDecorator(func) {
+    let cache = new Map()
 
+    return function (x){
+        if (cache.has(x)){
+            return cache.get(x)
+        }
+        let result = func.apply(this, arguments)
 
+        cache.set(x, result)
+        return result
+    }
+}
+function fast(x, y, z) {
+    console.log(x*y*z)
+}
+
+fast = copyDecorator(fast)
+
+fast(2, 5, 5)
+console.log('this sheet')
 
 //the problems
 
