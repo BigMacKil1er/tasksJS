@@ -70,3 +70,21 @@ console.log(admin.fullName)
 admin.fullName = 'Jet Li'
 console.log(admin.fullName)
 console.log(user.fullName)
+
+
+// solve a problem
+function f(a, b) {
+    console.log(`Sum a + b = ${a+b}`)
+}
+
+// Function.prototype.defer = function (ms) {
+//     setTimeout(this, ms)
+// }
+// f.defer(1500)
+Function.prototype.defer = function (ms) {
+    let f = this
+    return function (...args) {
+        setTimeout(() => f.apply(this, args), ms)
+    }
+}
+f.defer(1500)(1, 3)
