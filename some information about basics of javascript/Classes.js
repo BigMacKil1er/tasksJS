@@ -136,3 +136,35 @@ class Some extends Object{
 let some = new Some('FuckMe')
 
 console.log(some.name)
+
+class TemperatureBody{
+    _temp = 32
+
+    set temp(value){
+        if (value < 32) throw new Error('Температура неможет быть меньше, если вы живы')
+        this._temp = value
+    }
+    get temp(){
+        return this._temp
+    }
+}
+
+let human = new TemperatureBody()
+human.temp = 33
+console.log(human.temp)
+
+// another exemple 
+
+class PiaceOfShit {
+    constructor(name) {
+        this._name = name
+    }
+
+    get name(){
+        return this._name
+    }
+}
+
+let sergey = new PiaceOfShit('Серега')
+sergey.name = 'Артем'
+console.log(`Имя куска дерьма: ${sergey.name}`)
