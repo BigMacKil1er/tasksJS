@@ -51,7 +51,7 @@ class Animal {
     }
 }
 
-let tiger = new Animal('Тигруля')
+let tiger = new Animal('Мочеглот')
 
 tiger.run(40)
 
@@ -59,6 +59,13 @@ setTimeout(()=> tiger.stop(), 5000)
 
 class Rabbit extends Animal{
     hide(){
-
+        console.log(`${this.name} прячется от Мочеглота`)
     }
 }
+
+let pavlusha = new Rabbit('Павлуша')
+
+pavlusha.run(10)
+pavlusha.hide()
+
+setTimeout(()=> pavlusha.stop(), 4000)
