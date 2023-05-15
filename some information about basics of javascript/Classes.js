@@ -90,12 +90,38 @@ class Car {
     constructor() {
         console.log(this.brand)
     }
+    showBrand(){
+        console.log('Bmw')
+    }
 }
 
 class Mers extends Car{
     brand = 'mers'
+    showBrand() {
+        console.log('Mercedes');
+    }
 }
 
-let mers = new Mers()
+let mers = new Mers()  // bmw
+let bmw = new Car()    // bmw
+console.log('--------------------')
+mers.showBrand()
+bmw.showBrand()
 
-mers
+class ExtendedClock extends Clock{
+    constructor(options) {
+        super(options);
+        let { precision = 1000 } = options
+        this.precision = precision
+    }
+    start() {
+        this.render()
+        this.timer = setInterval(()=> this.render(), this.precision)
+    }
+}
+
+let ticTac = new ExtendedClock({template: 'h:m:s'})
+
+ticTac.start()
+
+setTimeout(() => ticTac.stop(), 10000)
