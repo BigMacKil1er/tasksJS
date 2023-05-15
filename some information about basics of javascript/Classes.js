@@ -33,3 +33,32 @@ clock.start()
 
 
 setTimeout(() => clock.stop(), 5000)
+
+class Animal {
+    constructor(name) {
+        this.speed = 0
+        this.name = name
+    }
+
+    run(speed){
+        this.speed = speed
+        console.log(`${this.name} бежит со скоростью ${this.speed}`)
+    }
+
+    stop(){
+        this.speed = 0
+        console.log(`${this.name} стоит как в копаный!`)
+    }
+}
+
+let tiger = new Animal('Тигруля')
+
+tiger.run(40)
+
+setTimeout(()=> tiger.stop(), 5000)
+
+class Rabbit extends Animal{
+    hide(){
+
+    }
+}
