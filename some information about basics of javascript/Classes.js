@@ -153,7 +153,8 @@ let human = new TemperatureBody()
 human.temp = 33
 console.log(human.temp)
 
-// another exemple 
+// another exemple
+// договоренность програмистов))
 
 class PiaceOfShit {
     constructor(name) {
