@@ -125,3 +125,14 @@ let ticTac = new ExtendedClock({template: 'h:m:s'})
 ticTac.start()
 
 setTimeout(() => ticTac.stop(), 10000)
+
+class Some extends Object{
+    constructor(name) {
+        super();
+        this.name = name
+    }
+}
+
+let some = new Some('FuckMe')
+
+console.log(some.name)
