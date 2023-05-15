@@ -168,3 +168,27 @@ class PiaceOfShit {
 let sergey = new PiaceOfShit('Серега')
 sergey.name = 'Артем'
 console.log(`Имя куска дерьма: ${sergey.name}`)
+
+// new syntax
+
+class TankCapacity{
+    #tankMax = 60
+    #tankNow = 0
+    constructor(brand) {
+        this.brand = brand
+    }
+    setTank(value){
+        if (value < 0) throw new Error('Ошибка не может быть отрицательного уровня топлива')
+        if (value > this.#tankMax) throw new Error('Ошибка! Слишком много топлива!')
+        this.#tankNow = value
+    }
+    getTank(){
+        return `Уровень топлива: ${this.#tankNow}`
+    }
+
+}
+
+let chevy = new TankCapacity('Шевролет')
+chevy.setTank(50)
+console.log(chevy.getTank())
+console.log('========================+')
