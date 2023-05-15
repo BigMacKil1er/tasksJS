@@ -61,11 +61,41 @@ class Rabbit extends Animal{
     hide(){
         console.log(`${this.name} прячется от Мочеглота`)
     }
+    stop(){
+        super.stop()
+        this.hide()
+    }
 }
 
 let pavlusha = new Rabbit('Павлуша')
 
 pavlusha.run(10)
-pavlusha.hide()
+// pavlusha.hide()
 
 setTimeout(()=> pavlusha.stop(), 4000)
+
+class Fish extends Animal{
+    constructor(name, earLength) {
+        super(name);
+        this.earLength = earLength
+    }
+}
+
+let karasi = new Fish('Карась', 10)
+karasi.run(1)
+console.log(karasi.earLength)
+
+class Car {
+    brand = 'bmw'
+    constructor() {
+        console.log(this.brand)
+    }
+}
+
+class Mers extends Car{
+    brand = 'mers'
+}
+
+let mers = new Mers()
+
+mers
