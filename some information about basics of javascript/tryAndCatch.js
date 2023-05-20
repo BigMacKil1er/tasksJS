@@ -5,6 +5,12 @@ class ValidationError extends Error{
         this.name = 'Validation Error'
     }
 }
+class PropertyRequiredError extends ValidationError{
+    constructor(property) {
+        super('Нет свойства: ' + property);
+        this.property = property
+    }
+}
 
 function readUser(json) {
     let user = JSON.parse(json)
@@ -27,5 +33,28 @@ try {
         console.log('JSON ошибка ебанного синтаксиса ' + e.message)
     } else {
         throw e
+    }
+}
+
+function readUsers(json) {
+    let user = JSON.parse(json)
+
+    if(!user.name) throw new PropertyRequiredError('name')
+    if (!user.age) throw new PropertyRequiredError('age')
+
+    return user
+}
+
+try {
+    readUsers(json)
+    readUsers(jsonWithoutName)
+    readUsers(brockenJson)
+} catch (e) {
+    if(e instanceof ValidationError){
+        console.log('Неверные данные: '+e.message)
+        console.log(e.name)
+        console.log(e.property)
+    } else if(e instanceof SyntaxError) {
+        console.log('JSON ошибка синтаксиса ' + e.message)
     }
 }
