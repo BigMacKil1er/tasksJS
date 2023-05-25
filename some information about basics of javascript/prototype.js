@@ -88,3 +88,16 @@ Function.prototype.defer = function (ms) {
     }
 }
 f.defer(1500)(1, 3)
+
+
+function Animal(name, legs, usi) {
+    this.name = name
+    this.legs = legs
+    this.usi = usi
+}
+
+function Cat() {
+    this.sayMyau = function (){
+        console.log(this.name + 'myau')
+    }
+}
