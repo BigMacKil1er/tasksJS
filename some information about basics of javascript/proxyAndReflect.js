@@ -10,7 +10,7 @@ function wrap(target) {
     return new Proxy(target, {
         get(target, p, receiver) {
             if (p in target){
-                return target[p]
+                return Reflect.get(target, p, receiver)
             } else {
                 throw new Error('Нет такого')
             }
